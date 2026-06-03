@@ -24,7 +24,7 @@ Statistical analyses were performed in R (4.5.3) and Python (3.12.13) ([Supp.Par
 
 3.	**Link Function & Transform:** A parsimonious linear link combined with square-root transformed MoCA to resolve ceiling effects [@wangPredictiveModelLongitudinal2025] was required to achieve sufficient class separability. This specification satisfied @lennon2018framework criteria with OCC > 5 across all classes (concurrently with entropy > 0.7), whereas nonlinear functions (splines/beta) failed to meet these standards.
 
-4.	**Model Selection & Validation:** Iterative versions were evaluated via VarExpl() to quantify indicator contributions. We used confusion matrices, Adjusted Rand Index (ARI), and Cramer’s V to compare multivariate assignments against univariate benchmarks. Notably, the linear link produced identical class assignments for both raw and z-standardized models, a unique stability not observed with alternative links. [Table S2](#supp-model-selection) [Table S3](#supp-class-comparison)
+4.	**Model Selection & Validation:** Iterative versions were evaluated via VarExpl() to quantify indicator contributions. We used confusion matrices, Adjusted Rand Index (ARI), and Cramer’s V to compare multivariate assignments against univariate benchmarks. Notably, the linear link produced identical class assignments for both raw and z-standardized models, a unique stability not observed with alternative links. [](#supp-model-selection) [](#supp-class-comparison)
 
 The final 3-class model (RBDSQ, MoCA, MDS-UPDRS III, $\Delta$SBP) was selected based on the lowest Bayesian Information Criterion (BIC) and class sizes $> 5\%$. The z-standardized model was utilized for secondary analysis.
 
@@ -60,9 +60,9 @@ We employed XGBoost, a gradient boosting framework optimised for tabular data to
 
 <br/><br/>
 
-3-class model was selected for subsequent analyses: class1 n=173 (20.23%) stable high burden group, class2 n=568 (66.43%) low burden group, class3 n=114 (13.33%) increasing burden group. [Table 1](#main-model-selection) [Figure S2](#supp-trajectory)
+3-class model was selected for subsequent analyses: class1 n=173 (20.23%) stable high burden group, class2 n=568 (66.43%) low burden group, class3 n=114 (13.33%) increasing burden group. [](#main-model-selection) [](#supp-trajectory)
 
-All three classes had OCC values greater than 5. The residual standard errors were 1.25 for RBDSQ, 14.15 for MoCA, 22.11 for UPDRS III, and 11.58 for ΔSBP. The proportions of variance explained were 39.14%, 0.50%, 0.20%, 0.74%, respectively. We compared the 3-class solution from the multivariate model with the 3-class RBDSQ-only LCMM solution. The high agreement between the two classifications (ARI = 0.96; Cramer’s V = 0.95) indicated that the class structure was largely driven by the RBDSQ trajectory. [Table S4](#supp-rbd-model-selection) [Table S5](#supp-rbd-class-comparison) [Figure S3](#supp-rbd-trajectory)
+All three classes had OCC values greater than 5. The residual standard errors were 1.25 for RBDSQ, 14.15 for MoCA, 22.11 for UPDRS III, and 11.58 for ΔSBP. The proportions of variance explained were 39.14%, 0.50%, 0.20%, 0.74%, respectively. We compared the 3-class solution from the multivariate model with the 3-class RBDSQ-only LCMM solution. The high agreement between the two classifications (ARI = 0.96; Cramer’s V = 0.95) indicated that the class structure was largely driven by the RBDSQ trajectory. [](#supp-rbd-model-selection) [](#supp-rbd-class-comparison) [](#supp-rbd-trajectory)
 
 For the description of baseline characteristics see [Supp.Baseline](#supp-baseline).
 
@@ -98,7 +98,6 @@ Longitudinal analysis revealed divergent temporal dynamics: while the high-burde
 :header-rows: 1
 :name: multinomial-reg-table
 :align: center
-:widths: 40, 10, 12, 13, 12, 13
 
 "Predictor","N","Odds Ratio<br>(Class 1)","p-value<br>(Class 1)","Odds Ratio<br>(Class 3)","p-value<br>(Class 3)"
 "Sex (Male=1)","834","**3.28**","**<.001**","1.45","0.215"
@@ -125,13 +124,11 @@ Longitudinal analysis revealed divergent temporal dynamics: while the high-burde
 "APOE $\epsilon$4 (Carrier=1)","240","0.91","0.875","0.74","0.575"
 ```
 
-<br/><br/>
 
 ```{csv-table} Comparison of MRI Volume Trajectory Slopes (Reference: Class 2)[^3]
 :header-rows: 1
 :name: lmm-slope-table
 :align: center
-:widths: 40, 10, 12, 13, 12, 13
 
 "Region","p-value<br>(Class 1)","FDR q<0.10<br>(Class 1)","p-value<br>(Class 3)","FDR q<0.10<br>(Class 3)"
 "Thalamus","0.950","0.990","0.835","0.928"
@@ -146,9 +143,8 @@ Longitudinal analysis revealed divergent temporal dynamics: while the high-burde
 "WM Hypointensities","0.067","0.336","0.378","0.538"
 ```
 
-<br/><br/>
 
-The XGBoost model achieved an AUC of 0.88 and a CV balanced accuracy of 0.73 on test set with a maximum tree depth of 4 and learning rate of 0.06. SHAP analysis revealed REM (RBDSQ) as the most important predictor of classes followed by CSF ɑ-synuclein levels at baseline. [Figure S5](#supp-shap) [Figure S6](#supp-roc)
+The XGBoost model achieved an AUC of 0.88 and a CV balanced accuracy of 0.73 on test set with a maximum tree depth of 4 and learning rate of 0.06. SHAP analysis revealed REM (RBDSQ) as the most important predictor of classes followed by CSF ɑ-synuclein levels at baseline. [](#supp-shap) [](#supp-roc)
 
 
 # Discussion
@@ -159,7 +155,7 @@ These clinical phenotypes map to distinct neuroanatomical signatures. The stable
 
 <br/><br/>
 
-$^\dagger$ These authors contributed equally to this work.
+
 
 <br/><br/>
 
@@ -200,22 +196,18 @@ Inclusion criteria: drug naïve, with a levodopa equivalent daily dose (LEDD) of
 ### Missingness and attrition
 The missing rates for RBD, MoCA, delta SBP, and UPDRS3 were 0.9%, 1.1%, 3%, and 16%, respectively. LCMM accommodates incomplete longitudinal data, so no additional missingness handling was performed. Little’s MCAR test was significant (χ² = 208, df = 28, p < .001), indicating that the data were not missing completely at random. Given that participants with more severe disease were more likely to drop out, we assumed the data were missing at random. The majority of participants of three classes had dropped by year 5, Class1 showed the highest attrition. 
 
-### Figure S1
-Missing data pattern
-```{image} ./s3.png
-:name: missing-pattern
+```{figure} ./s3.png
+:label: missing-pattern
 :align: center
 :width: 60%
 
+Missing data pattern
 ```
 
-### Table S1
-Attrition by latent class across follow-up years
-```{csv-table} 
+```{csv-table} Attrition by latent class across follow-up years
 :header-rows: 1
 :name: supp-attrition-table
 :align: center
-:widths: 18, 16, 16, 16, 16, 16, 16
 
 "Class","Baseline","Year 1","Year 2","Year 3","Year 4","Year 5"
 "Class 1","173<br>(100.0%)","170<br>(98.3%)","125<br>(72.3%)","80<br>(46.2%)","48<br>(27.7%)","35<br>(20.2%)"
@@ -225,13 +217,10 @@ Attrition by latent class across follow-up years
 
 
 
-### Table S2
-Multivariate LCMM model (raw-score/transformed-MoCA) selection and classification metrics
-```{csv-table} 
+```{csv-table} Multivariate LCMM model (raw-score/transformed-MoCA) selection and classification metrics
 :header-rows: 1
 :name: supp-model-selection
 :align: center
-:widths: 8, 16, 16, 12, 12, 22, 22, 12
 "K","Log-likelihood","Relative entropy","AIC","BIC","Proportion per class (%)","Average posterior probability","OCC"
 "1","-35284.04","1.0000000","70594.07","70655.84","100.00000","-","-"
 "2","-35180.50","0.7946713","70392.99","70469.01","28.77193<br>71.22807","0.8942<br>0.9606","-"
@@ -241,13 +230,10 @@ Multivariate LCMM model (raw-score/transformed-MoCA) selection and classificatio
 *Note. The 4-class model yielded an empty class (0.00%) and undefined posterior probability (NaN), indicating a degenerate solution.
 
 
-### Table S3
-Agreement of multidomain class assignments between the raw-score/transformed-MoCA model (A) and the z-score model (B)
-```{csv-table} 
+```{csv-table} Agreement of multidomain class assignments between the raw-score/transformed-MoCA model (A) and the z-score model (B)
 :header-rows: 1
 :name: supp-class-comparison
 :align: center
-:widths: 20, 15, 15, 15, 15
 
 "","B: Class 1","B: Class 2","B: Class 3","Total"
 "A: Class 1","173","0","0","173"
@@ -259,26 +245,20 @@ ARI = 1; Cramér's V = 1.
 
 
 
-(supp-trajectory)=
-### Figure S2
-Multivariate model (z-score) - Estimated mean with 95% CI and observed mean
-```{image} ./S1.png
-:name: supp-trajectory
+```{figure} ./s1.png
+:label: supp-trajectory
 :align: center
 :width: 80%
 
+Multivariate model (z-score) — Estimated mean with 95% CI and observed mean
 ```
 
 
 
-### Table S4
-RBDSQ LCMM model selection and classification metrics
-
-```{csv-table} 
+```{csv-table} RBDSQ LCMM model selection and classification metrics
 :header-rows: 1
 :name: supp-rbd-model-selection
 :align: center
-:widths: 8, 16, 16, 12, 12, 22, 22, 12
 
 "K","Log-likelihood","Relative entropy","AIC","BIC","Proportion per class (%)","Average posterior probability","OCC"
 "1","-7504.377","1.0000000","15016.75","15035.76","100.00000","-","-"
@@ -289,13 +269,10 @@ RBDSQ LCMM model selection and classification metrics
 *Note. The 4-class model yielded an empty class (0.00%) and undefined posterior probability (NaN), indicating a degenerate solution.
 
 
-### Table S5
-Comparison of class assignments between the z-score multivariate LCMM model (A) and the RBD-only LCMM model (C)
-```{csv-table} 
+```{csv-table} Comparison of class assignments between the z-score multivariate LCMM model (A) and the RBD-only LCMM model (C)
 :header-rows: 1
 :name: supp-rbd-class-comparison
 :align: center
-:widths: 20, 15, 15, 15, 15
 
 "","A: Class 1","A: Class 2","A: Class 3","Total"
 "C: Class 1","163","2","0","165"
@@ -306,14 +283,12 @@ Comparison of class assignments between the z-score multivariate LCMM model (A) 
 ARI = 0.956; Cramér's V = 0.950.
 
 
-(supp-rbd-trajectory)=
-### Figure S3
-RBDSQ Estimated Mean Trajectories with 95% CIs and Raw Individual Trajectories in the MultLCMM (z-score model)
-```{image} ./S2.png
-:name: supp-rbd-trajectory
+```{figure} ./s2.png
+:label: supp-rbd-trajectory
 :align: center
 :width: 100%
 
+RBDSQ Estimated Mean Trajectories with 95% CIs and Raw Individual Trajectories in the MultLCMM (z-score model)
 ```
 
 (supp-baseline)=
@@ -323,10 +298,7 @@ Baseline differences across classes were mainly observed in RBD and autonomic ra
 Continuous variables were expressed as mean ± standard deviation (SD), categorical variables were presented as number and percentage. Differences among groups were assessed by the Kruskal-Wallis test (continuous variables) and the chi-square test (categorical variables), pairwise comparisons were presented with Mann–Whitney U (continuous variables) and chi-square test (categorical variables), and was corrected by with Benjamini–Hochberg FDR.
 
 
-### Table S6
-Baseline characteristics by latent class
-
-```{csv-table}
+```{csv-table} Baseline characteristics by latent class
 :header-rows: 1
 :name: supp-baseline-characteristics
 :align: center
@@ -397,31 +369,27 @@ Red blood cells represent a significant source of interference in α-synuclein a
 Multicollinearity was assessed using Variance Inflation Factors (VIF) via the car library [@johnfoxCompanionAppliedRegression2019], with all predictors yielding acceptable values (VIF < 5).
 
 
-### Figure S4
-LMM Predicted Trajectories, for regions where nominal differences were found between Class 2 and Class 3
-```{image} ./s4.png
-:name: lmm-predicty
+```{figure} ./s4.png
+:label: lmm-predicty
 :align: center
 :width: 100%
+
+LMM Predicted Trajectories, for regions where nominal differences were found between Class 2 and Class 3
 ```
 
 
 ## XGBoost
-(supp-shap)=
-### Figure S5
+```{figure} ./s5.png
+:label: supp-shap
+:align: center
+:width: 80%
+
 SHAP beeswarm plot for Class 1
-```{image} ./s5.png
-:name: supp-shap
-:align: center
-:width: 80%
-
 ```
-(supp-roc)=
-### Figure S6
-ROC curves for one-vs-rest on the test set
-```{image} ./s6.png
-:name: supp-roc
+```{figure} ./s6.png
+:label: supp-roc
 :align: center
 :width: 80%
 
+ROC curves for one-vs-rest on the test set
 ```
