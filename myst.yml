@@ -1,38 +1,73 @@
 version: 1
 extends:
-- https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.1.0/nexus.yml
-- https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.1.0/isp-micropublication-2025.yml
+- https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.2.0/nexus.yml
+- https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.2.0/isp-micropublication-2025.yml
 
 project:
-  # Uncomment and fill when published
-  # doi: 10.5281/zenodo.XXXXXXX
-  # date: YYYY-MM-DD
-  authors: 
-  - name: Shiman Wen†
-    orchid: 0000-0002-6538-8793
+  authors:
+  - name: Shiman Wen
+    orcid: 0000-0002-6538-8793
     equal-contributor: true
-    note: "†"
+    email: shimanwen360@gmail.com
+    corresponding: true
     affiliations: Neuromatch Academy, Neuromatch, Inc.
-    roles: []
-  - name: Krzysztof Przestrzelski†
-    orchid: 0009-0005-9950-3306
+    roles:
+    - Conceptualization
+    - Data curation
+    - Formal analysis
+    - Investigation
+    - Methodology
+    - Project administration
+    - Software
+    - Validation
+    - Visualization
+    - Writing – original draft
+    - Writing – review & editing
+  - name: Krzysztof Przestrzelski
+    orcid: 0009-0005-9950-3306
+    email: k.przestrzelski75@gmail.com
+    corresponding: true
     equal-contributor: true
-    note: "†"
     affiliations: Neuromatch Academy, Neuromatch, Inc.
-    roles: []
+    roles:
+    - Conceptualization
+    - Data curation
+    - Formal analysis
+    - Investigation
+    - Methodology
+    - Project administration
+    - Software
+    - Validation
+    - Visualization
+    - Writing – original draft
+    - Writing – review & editing
   - name: Pragata Ghosh
-    orchid: 0009-0002-6184-3549
+    orcid: 0009-0002-6184-3549
     affiliations: All India Institute of Medical Sciences, New Delhi, India
-    roles: []
+    roles:
+    - Conceptualization
+    - Data curation
+    - Investigation
+    - Methodology
+    - Project administration
+    - Validation
+    - Writing – original draft
   - name: Ishita Jain
-    orchid: 0009-0007-2054-1882
+    orcid: 0009-0007-2054-1882
     affiliations: All India Institute of Medical Sciences, Bhopal, India
-    roles: []
+    roles:
+    - Conceptualization
+    - Project administration
+    - Resources
+    - Validation
+    - Visualization
+    - Writing – original draft
   - name: Fernando Julian Chaure
-    orchid: 0000-0002-8072-3879
+    orcid: 0000-0002-8072-3879
     affiliations: Universidad de San Andrés, Buenos Aires, Argentina
-    roles: []
-    
+    roles:
+    - Supervision
+
   toc:
   - file: index.md
 
@@ -43,12 +78,6 @@ project:
   - Latent Class Mixed Model
   - Disease Heterogeneity
   - Longitudinal Phenotyping
-  github: https://github.com/impact-scholars/Multidomain-Longitudinal-Subtypes-of-Parkinson-s-Disease
+  github: https://github.com/impact-scholars/2026-longitudinal-subtyping-ppmi
   bibliography:
   - bib.bib
-  metadata:
-  notes:
-    †: "These authors contributed equally to this work."
-  # downloads:
-  # - file: supplementary-material.zip
-  #   title: Supplementary Material
