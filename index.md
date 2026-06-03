@@ -10,7 +10,7 @@ acknowledgments: |
 
 Parkinson’s disease (PD) is one of the fastest-growing neurological disorders globally, presenting a significant challenge to healthcare systems and patient quality of life [@wangEpidemiologyParkinsonsDisease2026; @michaelj.foxfoundationforparkinsonsresearchEconomicBurdenParkinsons2026]. It is generally observed that PD clinical subtypes are predominantly an early-stage phenomenon, often coalescing into a more uniform clinical presentation as the disease advances [@sauerbierNonMotorSubtypes2016]. While seminal baseline multi-modal clustering studies [@fereshtehnejadClinicalCriteriaSubtyping2017; @velucci2025nonmotor] have provided monumental insights into PD heterogeneity at a static time point, they are inherently limited in capturing the disease’s most defining characteristic: its variable rate of progression. A central challenge remains in determining whether these initial clinical snapshots translate into sustained, divergent trajectories over time. Previous research has successfully employed univariate latent class growth models to study individual domains—such as cognition (MoCA) [@pourzinal2024profiling], autonomic function (ΔSBP) [@chen2021orthostatic], and motor progression (MDS-UPDRS Part  III) [@he2023motor]. For sleep domain, previous studies often used the RBD screening questionnaire (RBDSQ), a verified easily applicable self-screening tool [@StiasnyKolster2007RBDSQ] to perform cross-sectional analysis [@Iijima2021RBDOlfactoryPD; @Bjornara2013RBDGenderPD], limited in discovering the heterogeneous evolution pattern in early-stage Parkinson’s disease[@Ye2022RBDProgressionPD]. Evaluating these axes in isolation limits our understanding of PD as a multi-system disorder. To offer a multidimential perspective, our research undertakes an exploratory investigation using a multivariate longitudinal latent class model. We also relate these emergent clinical phenotypes to targeted structural biomarkers as highlighted in recent meta-analyses [@filideiParkinsonsDiseaseClinical2025], bridging the gap between data-driven clinical subtypes and their underlying biological correlates is a critical priority for the field.
 
-<br/><br/>
+
 
 # Methodology
 
@@ -42,11 +42,9 @@ The relationship between class membership and longitudinal atrophy (LMM) was imp
 
 We employed XGBoost, a gradient boosting framework optimised for tabular data to predict the latent classes from baseline features. The dataset contains PATNO, their respective class assignment , age, sex, race, baseline clinical scales, DaTScan features, genetics and biofluid markers. The dataset was split into (70:15:15) train, validation, test set. Hyperparameters were optimised using Random search and 3 fold cross validation. We also used sample weights and balanced accuracy to tackle the problem of imbalanced classes. Model performance was evaluated using AUC. SHAP was employed to explain the results of XGBoost.
 
-<br/><br/>
 
 # Results
 
-<br/><br/>
 
 ```{figure} figure.png
 :name: figure-main
@@ -58,7 +56,6 @@ We employed XGBoost, a gradient boosting framework optimised for tabular data to
 **E:** Boxplots of the Individual annual slopes (Empirical Bayes estimates) demonstrate significantly accelerated atrophy or expansion in Class 3 (orange) compared to the relatively stable Class 2 (green), with a red dashed line indicating the threshold of no change.
 ```
 
-<br/><br/>
 
 3-class model was selected for subsequent analyses: class1 n=173 (20.23%) stable high burden group, class2 n=568 (66.43%) low burden group, class3 n=114 (13.33%) increasing burden group. [](#main-model-selection) [](#supp-trajectory)
 
@@ -66,7 +63,6 @@ All three classes had OCC values greater than 5. The residual standard errors we
 
 For the description of baseline characteristics see [Supp.Baseline](#supp-baseline).
 
-<br/><br/>
 
 ```{csv-table} Multivariate LCMM model (z-score) selection and classification metrics
 :header-rows: 1
@@ -81,7 +77,6 @@ For the description of baseline characteristics see [Supp.Baseline](#supp-baseli
 ```
 
 
-<br/><br/>
 
 To ensure model stability and numerical convergence, predictors were structured into two primary thematic blocks: MRI regional volumes (N = 474) and biofluid/clinical biomarkers (N = 240). Age, sex, and education were included as covariates in both models. Finally, UPSIT, Specific Binding Ratios (SBR), and APOE were evaluated using their maximum available sample sizes, with the more restricted combined model (N = 240) serving as a sensitivity analysis to verify the consistency of effect sizes and directions across cohorts.
 
@@ -91,10 +86,9 @@ To validate the clinical relevance of the identified classes, we compared baseli
 
 Longitudinal analysis revealed divergent temporal dynamics: while the high-burden class exhibited pronounced volumetric differences at baseline, the increasing-burden group was characterized by accelerated rates of structural change. We observed broad trends of accelerated ventricular and choroid plexus expansion in the latter; however, under rigorous False Discovery Rate correction (n = 382), only the inferior lateral ventricle slope survived the significance threshold ($q$ < .10).
 
-<br/><br/>
 
 
-```{csv-table} Multinomial Logistic Regression on Baseline Biomarkers (Reference: Class 2)[^1][^2]
+```{csv-table} Multinomial Logistic Regression on Baseline Biomarkers (Reference: Class 2). **Bolded** values indicate $p < 0.05$. Demographic variables (Age, Sex, Education) were included as controls in all models.
 :header-rows: 1
 :name: multinomial-reg-table
 :align: center
@@ -125,7 +119,7 @@ Longitudinal analysis revealed divergent temporal dynamics: while the high-burde
 ```
 
 
-```{csv-table} Comparison of MRI Volume Trajectory Slopes (Reference: Class 2)[^3]
+```{csv-table} Comparison of MRI Volume Trajectory Slopes (Reference: Class 2). Results surviving False Discovery Rate (FDR) correction are indicated in **bold** in addition to unadjusted $p < 0.05$ results.
 :header-rows: 1
 :name: lmm-slope-table
 :align: center
@@ -153,34 +147,11 @@ Three longitudinal phenotypes identified in the PPMI cohort establish REM sleep 
 
 These clinical phenotypes map to distinct neuroanatomical signatures. The stable high-burden group (Class 1) exhibited significant baseline atrophy in the thalamus and putamen, contrasted by a "Hippocampal Paradox" (OR = 1.64) where larger baseline volumes were associated with high-burden status [@vanpettenRelationshipHippocampalVolume2004; @dickersonIncreasedHippocampalActivation2005]. This may reflect early-stage neuroinflammatory swelling or the selective preservation of memory centers in "body-first" endotypes [@borghammerBrainFirstGutFirstParkinsons2019]. Conversely, in the increasing-burden group (Class 3), larger baseline pallidal volumes, potentially representing transient compensatory mechanisms, preceded rapid ventricular expansion. This expansion serves as a robust longitudinal marker for the widespread non-dopaminergic neurodegeneration characterizing this group's aggressive trajectory.
 
-<br/><br/>
 
 
-
-<br/><br/>
-
-
-[^1]: **Bolded** values indicate $p < 0.05$.
-[^2]: Demographic variables (Age, Sex, Education) were included as controls in all models.
-[^3]: Results surviving False Discovery Rate (FDR) correction are indicated in **bold** in addition to unadjusted $p < 0.05$ results.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```{raw:typst}
+#pagebreak()
+```
 
 
 # Supplementary material
@@ -227,7 +198,7 @@ Missing data pattern
 "3","**-35110.15**","**0.7527719**","**70258.30**","**70348.57**","**20.23392**<br>**66.43275**<br>**13.33333**","**0.8684**<br>**0.9221**<br>**0.7868**","**26.0**<br>**5.98**<br>**24.0**"
 "4","-35110.15","0.4963126","70264.30","70368.82","15.08772<br>20.46784<br>64.44444<br>0.00","0.7431<br>0.8622<br>0.5680<br>NaN","-"
 ```
-*Note. The 4-class model yielded an empty class (0.00%) and undefined posterior probability (NaN), indicating a degenerate solution.
+The 4-class model yielded an empty class (0.00%) and undefined posterior probability (NaN), indicating a degenerate solution.
 
 
 ```{csv-table} Agreement of multidomain class assignments between the raw-score/transformed-MoCA model (A) and the z-score model (B)
@@ -266,7 +237,7 @@ Multivariate model (z-score) — Estimated mean with 95% CI and observed mean
 "3","**-7326.080**","**0.7573811**","**14672.16**","**14719.67**","**19.29825**<br>**66.43275**<br>**14.26901**","**0.8697**<br>**0.9236**<br>**0.7935**","**27.9**<br>**6.11**<br>**23.1**"
 "4","-7326.080","0.5375571","14678.16","14739.92","15.32164<br>19.41520<br>65.26316<br>0.00000","0.7700<br>0.8665<br>0.6770<br>NaN","-"
 ```
-*Note. The 4-class model yielded an empty class (0.00%) and undefined posterior probability (NaN), indicating a degenerate solution.
+The 4-class model yielded an empty class (0.00%) and undefined posterior probability (NaN), indicating a degenerate solution.
 
 
 ```{csv-table} Comparison of class assignments between the z-score multivariate LCMM model (A) and the RBD-only LCMM model (C)
@@ -296,6 +267,11 @@ RBDSQ Estimated Mean Trajectories with 95% CIs and Raw Individual Trajectories i
 Baseline differences across classes were mainly observed in RBD and autonomic rather than in age, disease duration, education, cognition, or motor severity. Class 1 represented a high RBD and autonomic burden with broader non-motor impairment and lower DAT binding. Class 2 showed the mildest overall profile, with the lowest RBD, autonomic burden, and relatively preserved DAT. Class 3 showed intermediate severity at baseline, but relatively prominent autonomic and olfactory dysfunction, importantly, its DAT was generally closer to Class 1, indicating substantial dopaminergic deficit despite less extensive non-motor burden than Class 1. 
 
 Continuous variables were expressed as mean ± standard deviation (SD), categorical variables were presented as number and percentage. Differences among groups were assessed by the Kruskal-Wallis test (continuous variables) and the chi-square test (categorical variables), pairwise comparisons were presented with Mann–Whitney U (continuous variables) and chi-square test (categorical variables), and was corrected by with Benjamini–Hochberg FDR.
+
+```{raw:typst}
+#let orig_tablex = tablex
+#let tablex = (..args) => text(size: 6pt, orig_tablex(..args))
+```
 
 
 ```{csv-table} Baseline characteristics by latent class
@@ -392,4 +368,8 @@ SHAP beeswarm plot for Class 1
 :width: 80%
 
 ROC curves for one-vs-rest on the test set
+```
+
+```{raw:typst}
+#pagebreak()
 ```
