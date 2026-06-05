@@ -2,6 +2,8 @@
 title: Parallels between RBDSQ Progression and Brain Morphology in Longitudinal Subtyping of PPMI Cohort
 abstract: |
     Parkinson’s disease (PD) exhibits significant clinical heterogeneity, yet the longitudinal interplay between multidomain symptoms and structural biomarkers remains underexplored. We analyzed 5-year data from the PPMI cohort (N=855) using multivariate latent class mixed modeling (multlcmm) to identify distinct progression phenotypes. A two-step externVar approach assessed class predictors, while Linear Mixed Models and XGBoost characterized longitudinal atrophy and early-stage subtype prediction. Three classes emerged: Stable High-Burden (Class 1, n=173), Low-Burden (Class 2, n=568), and Increasing-Burden (Class 3, n=114). Model assignment was primarily driven by RBDSQ trajectories (ARI = 0.96) and validated by significantly lower baseline UPSIT scores in Classes 1 and 3 ($p$ < .01). Class 1 exhibited pronounced baseline atrophy, whereas Class 3 demonstrated accelerated longitudinal structural change. SHAP analysis identified baseline RBDSQ and CSF $\alpha$-synuclein as the most critical predictors of class membership.
+data_availability: |
+    Published via [Impact Scholars](https://github.com/impact-scholars/2026-longitudinal-subtyping-ppmi); original [development repository](https://github.com/kprzes/Multidomain-Longitudinal-Subtypes-of-Parkinson-s-Disease).
 acknowledgments: |
     This work was supported by the Impact Scholars Program. We thank the PPMI participants and staff.
 ---
