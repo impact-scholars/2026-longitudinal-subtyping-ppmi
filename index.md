@@ -188,7 +188,11 @@ Finally, while we did not directly measure α-synuclein pathology, these distinc
 
 ## List of Abbreviations
 
-AIC
+```{raw:typst}
+#place-abbreviations()
+```
+
+<!-- AIC
 : Akaike Information Criterion
 
 APOE $\epsilon$4
@@ -291,7 +295,8 @@ VIF
 : Variance Inflation Factor
 
 WM
-: White Matter
+: White Matter -->
+
 
 (supp-methodology)=
 ## Methodology

@@ -70,6 +70,7 @@ project:
 
   toc:
   - file: index.md
+  # - file: script/Updated_multlcmm(supplementary).ipynb # if you want to...
 
   id: isp-2026-longitudinal-subtyping-ppmi
   title: REM Sleep Behaviour Disorder Dominates Heterogeneity in Longitudinal Analysis of Parkinson's Disease
