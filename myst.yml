@@ -4,15 +4,81 @@ extends:
 - https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.2.0/isp-micropublication-2025.yml
 
 project:
-  authors: []
+  authors:
+  - name: Shiman Wen
+    orcid: 0000-0002-6538-8793
+    equal-contributor: true
+    email: shimanwen360@gmail.com
+    corresponding: true
+    affiliations: Neuromatch Academy, Neuromatch, Inc.
+    roles:
+    - Conceptualization
+    - Data curation
+    - Formal analysis
+    - Investigation
+    - Methodology
+    - Project administration
+    - Software
+    - Validation
+    - Visualization
+    - Writing – original draft
+    - Writing – review & editing
+  - name: Krzysztof Przestrzelski
+    orcid: 0009-0005-9950-3306
+    email: k.przestrzelski75@gmail.com
+    corresponding: true
+    equal-contributor: true
+    affiliations: Neuromatch Academy, Neuromatch, Inc.
+    roles:
+    - Conceptualization
+    - Data curation
+    - Formal analysis
+    - Investigation
+    - Methodology
+    - Project administration
+    - Software
+    - Validation
+    - Visualization
+    - Writing – original draft
+    - Writing – review & editing
+  - name: Pragata Ghosh
+    orcid: 0009-0002-6184-3549
+    affiliations: All India Institute of Medical Sciences, New Delhi, India
+    roles:
+    - Conceptualization
+    - Data curation
+    - Investigation
+    - Methodology
+    - Project administration
+    - Validation
+    - Writing – original draft
+  - name: Ishita Jain
+    orcid: 0009-0007-2054-1882
+    affiliations: All India Institute of Medical Sciences, Bhopal, India
+    roles:
+    - Conceptualization
+    - Project administration
+    - Resources
+    - Validation
+    - Visualization
+    - Writing – original draft
+  - name: Fernando Julian Chaure
+    orcid: 0000-0002-8072-3879
+    affiliations: Universidad de San Andrés, Buenos Aires, Argentina
+    roles:
+    - Supervision
+
   toc:
   - file: index.md
-  id:
-  title:
-  keywords: []
-  github:
+  # - file: script/Updated_multlcmm(supplementary).ipynb # if you want to...
+
+  id: isp-2026-longitudinal-subtyping-ppmi
+  title: REM Sleep Behaviour Disorder Dominates Heterogeneity in Longitudinal Analysis of Parkinson's Disease
+  keywords:
+  - Parkinson’s Disease
+  - Latent Class Mixed Model
+  - Disease Heterogeneity
+  - Longitudinal Phenotyping
+  github: https://github.com/impact-scholars/2026-longitudinal-subtyping-ppmi
   bibliography:
   - bib.bib
-
-site:
-  template: https://raw.githubusercontent.com/impact-scholars/myst-theme/v0.2.0/.deploy/book/template.yml
