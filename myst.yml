@@ -10,7 +10,8 @@ project:
     equal-contributor: true
     email: shimanwen360@gmail.com
     corresponding: true
-    affiliations: Neuromatch Academy, Neuromatch, Inc.
+    affiliations:
+    - Neuromatch Academy, Neuromatch, Inc.
     roles:
     - Conceptualization
     - Data curation
@@ -28,7 +29,8 @@ project:
     email: k.przestrzelski75@gmail.com
     corresponding: true
     equal-contributor: true
-    affiliations: Neuromatch Academy, Neuromatch, Inc.
+    affiliations:
+    - Neuromatch Academy, Neuromatch, Inc.
     roles:
     - Conceptualization
     - Data curation
@@ -43,7 +45,8 @@ project:
     - Writing – review & editing
   - name: Pragata Ghosh
     orcid: 0009-0002-6184-3549
-    affiliations: All India Institute of Medical Sciences, New Delhi, India
+    affiliations:
+    - All India Institute of Medical Sciences, New Delhi, India
     roles:
     - Conceptualization
     - Data curation
@@ -54,7 +57,8 @@ project:
     - Writing – original draft
   - name: Ishita Jain
     orcid: 0009-0007-2054-1882
-    affiliations: All India Institute of Medical Sciences, Bhopal, India
+    affiliations:
+    - All India Institute of Medical Sciences, Bhopal, India
     roles:
     - Conceptualization
     - Project administration
@@ -64,7 +68,8 @@ project:
     - Writing – original draft
   - name: Fernando Julian Chaure
     orcid: 0000-0002-8072-3879
-    affiliations: Universidad de San Andrés, Buenos Aires, Argentina
+    affiliations:
+    - Universidad de San Andrés, Buenos Aires, Argentina
     roles:
     - Supervision
 
