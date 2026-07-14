@@ -85,6 +85,11 @@ project:
   - Disease Heterogeneity
   - Longitudinal Phenotyping
   github: https://github.com/impact-scholars/2026-longitudinal-subtyping-ppmi
+  options:
+    youtube: https://youtu.be/5_Fvx-1cg3c?t=1769
+  downloads:
+  - title: Seminar Presentation
+    url: https://youtu.be/5_Fvx-1cg3c?t=1769
   bibliography:
   - bib.bib
   doi: 10.5281/zenodo.20585309
