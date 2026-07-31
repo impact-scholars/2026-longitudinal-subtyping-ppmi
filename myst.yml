@@ -7,7 +7,7 @@ project:
   authors:
   - name: Shiman Wen
     orcid: 0000-0002-6538-8793
-    equal-contributor: true
+    equal_contributor: true
     email: shimanwen360@gmail.com
     corresponding: true
     affiliations:
@@ -28,7 +28,7 @@ project:
     orcid: 0009-0005-9950-3306
     email: k.przestrzelski75@gmail.com
     corresponding: true
-    equal-contributor: true
+    equal_contributor: true
     affiliations:
     - Neuromatch Academy, Neuromatch, Inc.
     roles:
